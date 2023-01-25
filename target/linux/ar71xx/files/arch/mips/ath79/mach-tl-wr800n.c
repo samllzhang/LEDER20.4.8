@@ -86,9 +86,9 @@ static void __init common_setup(unsigned usb_power_gpio, bool sec_ethernet)
 	ath79_register_wmac(ee, mac);
 }
 
-static void __init tl_wr703n_setup(void)
+static void __init tl_wr800n_setup(void)
 {
-	common_setup(TL_WR703N_GPIO_USB_POWER, false);
+	common_setup(TL_WR800N_GPIO_USB_POWER, false);
 }
 
 MIPS_MACHINE(ATH79_MACH_TL_WR800N, "TL-WR800N", "TP-LINK TL-WR800N v1",
