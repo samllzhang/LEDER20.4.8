@@ -33,6 +33,10 @@ static const char *tl_wr800n_part_probes[] = {
 	NULL,
 };
 
+static struct flash_platform_data tl_wr800n_flash_data = {
+.part_probes        = tl_wr800n_part_probes,
+};
+
 static struct gpio_led tl_wr800n_leds_gpio[] __initdata = {
 	{
 		.name		= "tp-link:blue:system",
