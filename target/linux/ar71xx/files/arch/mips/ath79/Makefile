@@ -242,6 +242,7 @@ obj-$(CONFIG_ATH79_MACH_TL_WR703N)		+= mach-tl-wr703n.o
 obj-$(CONFIG_ATH79_MACH_TL_WR720N_V3)		+= mach-tl-wr720n-v3.o
 obj-$(CONFIG_ATH79_MACH_TL_WR741ND)		+= mach-tl-wr741nd.o
 obj-$(CONFIG_ATH79_MACH_TL_WR741ND_V4)		+= mach-tl-wr741nd-v4.o
+obj-$(CONFIG_ATH79_MACH_TL_WR800N)		+= mach-tl-wr800n.o
 obj-$(CONFIG_ATH79_MACH_TL_WR802N_V1)		+= mach-tl-wr802n.o
 obj-$(CONFIG_ATH79_MACH_TL_WR802N_V2)		+= mach-tl-wr802n.o
 obj-$(CONFIG_ATH79_MACH_TL_WR810N)		+= mach-tl-wr810n.o
