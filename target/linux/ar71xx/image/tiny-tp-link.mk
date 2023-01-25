@@ -361,7 +361,7 @@ endef
 TARGET_DEVICES += tl-wr702n-v1
 
 define Device/tl-wr703n-v1
-  $(Device/tplink-8mlzma)
+  $(Device/tplink-16mlzma)
   DEVICE_TITLE := TP-LINK TL-WR703N v1
   DEVICE_PACKAGES := kmod-usb-core kmod-usb2
   BOARDNAME := TL-WR703N
@@ -501,6 +501,17 @@ define Device/tl-wr743nd-v2
   TPLINK_HWID := 0x07430002
 endef
 TARGET_DEVICES += tl-wr743nd-v2
+
+define Device/tl-wr800n-v1
+  $(Device/tplink-8mlzma)
+  DEVICE_TITLE := TP-LINK TL-WR800N v1
+  DEVICE_PACKAGES := kmod-usb-core kmod-usb2
+  BOARDNAME := TL-WR800N
+  DEVICE_PROFILE := TLWR800
+  TPLINK_HWID := 0x08000101
+  CONSOLE := ttyATH0,115200
+endef
+TARGET_DEVICES += tl-wr800n-v1
 
 define Device/tl-wr802n-v1
   $(Device/tplink-8mlzma)
