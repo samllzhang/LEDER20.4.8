@@ -479,6 +479,7 @@ platform_check_image() {
 	tl-wr740n-v6|\
 	tl-wr741nd|\
 	tl-wr741nd-v4|\
+	tl-wr800n|\
 	tl-wr802n-v1|\
 	tl-wr802n-v2|\
 	tl-wr810n|\
