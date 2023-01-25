@@ -52,13 +52,10 @@ static struct gpio_keys_button tl_wr800n_gpio_keys[] __initdata = {
 	}
 };
 
-static void __init common_setup(unsigned usb_power_gpio, bool sec_ethernet)
+static void __init tl_wr800n_setup(void)
 {
 	u8 *mac = (u8 *) KSEG1ADDR(0x1f01fc00);
 	u8 *ee = (u8 *) KSEG1ADDR(0x1fff1000);
-
-	/* disable PHY_SWAP and PHY_ADDR_SWAP bits */
-	ath79_setup_ar934x_eth_cfg(false, false);
 
 	ath79_register_m25p80(&tl_wr800n_flash_data);
 	ath79_register_leds_gpio(-1, ARRAY_SIZE(tl_wr800n_leds_gpio),
@@ -67,10 +64,9 @@ static void __init common_setup(unsigned usb_power_gpio, bool sec_ethernet)
 					ARRAY_SIZE(tl_wr800n_gpio_keys),
 					tl_wr800n_gpio_keys);
 
-	gpio_request_one(usb_power_gpio,
-			 GPIOF_OUT_INIT_HIGH | GPIOF_EXPORT_DIR_FIXED,
-			 "USB power");
-	ath79_register_usb();
+	ath79_set_usb_power_gpio(TL_WR720N_GPIO_USB_POWER, GPIOF_OUT_INIT_HIGH,
+"USB power");
+ath79_register_usb();
 
 	ath79_init_mac(ath79_eth0_data.mac_addr, mac, 0);
 
@@ -84,11 +80,6 @@ static void __init common_setup(unsigned usb_power_gpio, bool sec_ethernet)
 	}
 
 	ath79_register_wmac(ee, mac);
-}
-
-static void __init tl_wr800n_setup(void)
-{
-	common_setup(TL_WR800N_GPIO_USB_POWER, false);
 }
 
 MIPS_MACHINE(ATH79_MACH_TL_WR800N, "TL-WR800N", "TP-LINK TL-WR800N v1",
