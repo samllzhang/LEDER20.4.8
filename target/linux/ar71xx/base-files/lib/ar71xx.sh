@@ -228,6 +228,8 @@ tplink_board_detect() {
 	"075000"*)
 		model="TP-Link TL-WA750RE"
 		;;
+	"080001"*)
+		model="TP-Link TL-WR800N"
 	"080100"*)
 		model="TP-Link TL-WA801N/ND"
 		;;
@@ -1346,6 +1348,8 @@ ar71xx_board_detect() {
 	*"TL-WR741ND v4")
 		name="tl-wr741nd-v4"
 		;;
+	*"TL-WR800N v1")
+		name="tl-wr800n"
 	*"TL-WR802N v1")
 		name="tl-wr802n-v1"
 		;;
